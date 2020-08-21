@@ -20,6 +20,7 @@ public class EmployeeCurdExample {
 	@Autowired
 	private EmployeeJpa employeeJpa;
 	
+	
 	Scanner sc = new Scanner(System.in);
 
 	/**
