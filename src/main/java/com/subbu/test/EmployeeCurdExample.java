@@ -19,8 +19,7 @@ public class EmployeeCurdExample {
 
 	@Autowired
 	private EmployeeJpa employeeJpa;
-	
-	
+
 	Scanner sc = new Scanner(System.in);
 
 	/**
@@ -116,6 +115,31 @@ public class EmployeeCurdExample {
 		List<Employee> findAll = employeeJpa.findAll();
 		findAll.stream().iterator().forEachRemaining(System.out::println);
 		return findAll;
+	}
+
+	/**
+	 * This Method Will display Employee Based on Name And Email
+	 * 
+	 * 
+	 * 
+	 * @return
+	 */
+	public void getEmpolyeeByNameAndEmail() {
+
+		System.out.println("Enter Name And Email To Find Employee.....");
+		System.out.println("Enter Name Of The Employete..");
+		String name = sc.nextLine();
+		System.out.println("Enter Email To Find Employee..");
+		String email = sc.nextLine();
+		Employee emp = employeeJpa.findByNameAndEmail(name, email);
+		if (emp != null) {
+			System.out.println("Emp Details Based On Name And Email....");
+			System.out.println(emp);
+
+		} else {
+			System.out.println("Employee Not Found Based On Name : " + name + " & Email : " + email);
+		}
+
 	}
 
 }

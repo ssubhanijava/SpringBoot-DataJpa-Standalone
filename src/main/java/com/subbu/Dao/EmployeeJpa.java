@@ -6,4 +6,6 @@ import com.subbu.model.Employee;
 
 public interface EmployeeJpa extends JpaRepository<Employee, Integer> {
 
+	Employee findByNameAndEmail(String name, String email);
+
 }

@@ -17,7 +17,8 @@ public class SpringBootJpaApplication {
 		EmployeeCurdExample employeeCurdExample = applicationContext.getBean(EmployeeCurdExample.class);
 
 		Scanner sc = new Scanner(System.in);
-		System.out.println("-----------Enter Options  1-Create,2-update,3-Delete,4-FetchhingAll---------");
+		System.out.println(
+				"-----------Enter Options  1-Create,2-update,3-Delete,4-FetchhingAll,5-To retrive Emp Based On Name&Email---------");
 
 		int input = sc.nextInt();
 
@@ -31,7 +32,11 @@ public class SpringBootJpaApplication {
 			employeeCurdExample.deleteEmployee();
 		} else if (input == 4) {
 			employeeCurdExample.fetchAllEmployee();
-		} else {
+		} else if (input == 5) {
+			employeeCurdExample.getEmpolyeeByNameAndEmail();
+		}
+
+		else {
 			System.out.println("--You Enter Wrong Input--");
 
 		}
